@@ -61,7 +61,7 @@ public class PostService {
         post.setAuthor_id(postDTO.getAuthorId());
         post.setBody(postDTO.getBody());
 
-        // Fetch the Topic entity using the topicId from PostDTO
+        
         if (postDTO.getTopicId() != null) {
             Topic topic = topicRepository.findById(postDTO.getTopicId())
                     .orElseThrow(() -> new IllegalArgumentException("Topic with ID " + postDTO.getTopicId() + " does not exist."));
